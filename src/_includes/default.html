@@ -11,25 +11,36 @@
       <meta name="description" content="{{description}}"/>
     {% endif %}
     {% block head %}{% endblock %}
+    <link rel="stylesheet" href="https://use.typekit.net/ewg6ljh.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
-    {% if prism == true %}
-      <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
-    {% endif %}
   </head>
   <body>
-    {% include "./partials/navbar.html" %}
+
+    <header>
+      <h1>&nbsp;</h1>
+      <ul class="menu">
+        <li><a href="/#work">Work</a></li>
+<!--        <li><a href="#">Shop</a></li> -->
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </header>
+
+
+    <div class="main">
 
     {{ content | safe }}
 
-    {% include "./partials/footer.html" %}
-
-    <script src="/static/js/alpine.js"></script>
+    <footer>
+      <h3>THE END © BRIAN MOORE 2022</h3>
+    </footer>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->
       <!-- Needed only if you are using Netlify Identity feature -->
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
+    </div>
 
   </body>
 </html>

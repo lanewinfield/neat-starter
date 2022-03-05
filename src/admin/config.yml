@@ -12,53 +12,54 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "src/posts"
+  - label: "Work"
+    name: "work"
+    folder: "src/work"
     create: true
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subhead", name: "subhead", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["Tags", "created", "from", "config.yml"]
+      - { label: "Body", name: "body", widget: "code", default_language: "html" }
   - label: "Settings"
     name: "settings"
     editor:
       preview: false
     files:
-      - label: "Navigation"
-        name: "items"
-        file: "src/_data/navigation.yaml"
+      - label: "Contact"
+        name: "contact"
+        file: "src/_data/contact.yaml"
         fields:
-          - label: Nav Items
-            name: items
-            widget: list
-            allow_add: false
-            collapsed: false
-            fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
-        fields:
-          - label: Nav Items
+          - label: Contact Links
             name: links
             widget: list
             collapsed: false
             fields:
               - { label: Title, name: title, widget: string }
               - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
+      - label: "Press"
+        name: "press"
+        file: "src/_data/press.yaml"
+        fields:
+          - { label: Publication, name: publication, widget: string }
+          - { label: Subhead, name: subhead, widget: string }
+          - { label: URL, name: url, widget: string }
+      - label: "Awards"
+        name: "awards"
+        file: "src/_data/awards.yaml"
+        fields:
+          - { label: Award, name: award, widget: string }
+          - { label: Subhead, name: subhead, widget: string }
+          - { label: URL, name: url, widget: string, required: false}
+      - label: "Speaking"
+        name: "speaking"
+        file: "src/_data/speaking.yaml"
+        fields:
+          - { label: Event, name: event, widget: string }
+          - { label: Subhead, name: subhead, widget: string }
+          - { label: URL, name: url, widget: string, required: false}
       - label: "Meta Settings"
         name: "settings"
         file: "src/_data/settings.yaml"
