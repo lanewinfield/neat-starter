@@ -1,9 +1,6 @@
-{% set worklist = collections.work %}
-
-    {% for work in worklist %}
-    hi
+    {% for work in collections.work %}
         <div class="work-entry">
             <div class="entry-image"></div>
-            <h4>{{ work.data.title }}</h4> {{ work.data.subhead }}
+            <h4>{{ work.data.title }}</h4>&nbsp;{{ work.data.subhead }}
         </div>
     {% endfor %}

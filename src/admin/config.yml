@@ -22,7 +22,15 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subhead", name: "subhead", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "string"}
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Main", name: "main", widget: "code", default_language: "html" }
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "URL", name: "url", widget: "string" }
+          - { label: "Button text", name: "buttontext", widget: "string" }
   - label: "Settings"
     name: "settings"
     editor:
