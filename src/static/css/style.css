@@ -86,7 +86,7 @@ h2.letter {
   display: inline-block;
   position: sticky;
   z-index: 666;
-  top: 20px;
+  top: 15px;
   margin-top: 18vh;
   user-select: none;
   -moz-user-select: none;
@@ -152,7 +152,7 @@ header {
   top: 0;
   /*height: 100px;*/
   width: 90vw;
-  padding: 16px 5vw 60px;
+  padding: 12px 5vw 60px;
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 100%);
   align-items: center;
   display: flex;
