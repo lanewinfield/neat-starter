@@ -169,15 +169,16 @@ header ul.menu {
   text-align: right;
   align-items: center;
   display: flex;
-  justify-content: right;
-  width: 20vw;
+  justify-content: flex-end;
+  width: 50vw;
+  /*justify-content: space-between;*/
 /*        justify-content: center;
   align-items: center;
   flex-direction: column;*/
 }
 
 header ul.menu li {
-  margin-left: 25%;
+  margin-left: 1em;
   text-transform: uppercase;
   /*flex:  3;*/
 }
@@ -309,6 +310,10 @@ section.selected-work {
 
   section {
     padding-bottom: 250px;
+  }
+
+  header ul.menu li {
+    margin-left: 2em;
   }
 
   .main {
