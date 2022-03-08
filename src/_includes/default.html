@@ -11,7 +11,7 @@
       {% if path == "home" %}
       <meta name="description" content="{{ settings.sitedescription }}"/>
       {% else %}
-      <meta name="description" content="{{description}}"/>
+      <meta name="description" content="{{ title }} {{ subhead }}"/>
       {% endif %}
     {% endif %}
     {% block head %}{% endblock %}
