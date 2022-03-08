@@ -7,12 +7,10 @@
     <title>
       {% if path == "home" %}{{title}}{% else %}Brian Moore - {{title}}{% endif %}
     </title>
-    {% if description %}
-      {% if path == "home" %}
-      <meta name="description" content="{{ settings.sitedescription }}"/>
-      {% else %}
-      <meta name="description" content="{{ title }} {{ subhead }}"/>
-      {% endif %}
+    {% if path == "home" %}
+    <meta name="description" content="{{ settings.sitedescription }}"/>
+    {% else %}
+    <meta name="description" content="{{ title }} {{ subhead }}"/>
     {% endif %}
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="https://use.typekit.net/ewg6ljh.css">
