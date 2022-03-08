@@ -111,3 +111,4 @@ collections:
           - { label: URL, name: url, widget: string }
           - { label: "Share Image" , name: shareimage, widget: image }
           - { label: "Site Description" , name: sitedescription, widget: string }
+          - { label: "Base URL" , name: baseurl, widget: string }
