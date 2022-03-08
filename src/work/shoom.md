@@ -1,7 +1,7 @@
 ---
 title: Shoom
 subhead: shows off your sneakers while WFH
-thumbnail: /static/img/brian.png
+thumbnail: /static/img/shoom.jpg
 main: >-
   <div class="one-half"><div style="max-width: 56vh;"><div style="left: 0;
   width: 100%; height: 0; position: relative; padding-bottom: 177.7778%;
