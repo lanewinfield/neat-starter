@@ -102,8 +102,12 @@ h2.letter a, h1 a {
 }
 
 h4 {
-  font-weight: bold;
+  /*font-weight: bold;*/
   display: inline-block;
+}
+
+h4 u {
+  font-weight: bold;
 }
 .intro{
   position: relative;
