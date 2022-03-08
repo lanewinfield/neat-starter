@@ -1,0 +1,49 @@
+---
+layout: default
+---
+      
+<section class="current-work">
+  <div class="entry-image" style="background-image:url({{ thumbnail }})"></div>
+
+  <div class="work-description">
+  <div class="one-half">
+    <h2><span class="project-name">{{ title }}</span>&nbsp;{{ subhead }}</h2>
+  </div>
+
+  <div class="one-half">
+    {% if links %}
+    <ul class="work-links">
+    {% for links in links %}
+    <li><strong><a href="{{ links.url }}">{{links.buttontext}} &rarr;</a></strong></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+
+  {{ main | safe }}
+
+  </div>
+</section>
+<h3>More Work</h3>
+<section class="selected-work" id="work">
+
+  {% include "./partials/work-list.html" %}
+
+</section>
+
+<div class="contact-section">
+
+
+  <section class="contact" id="contact">
+    <h3>Contact</h3>
+    <ul>
+      {% for links in contact.links %}
+      <li><a href="{{ links.url }}">{{ links.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+
+</div>
+

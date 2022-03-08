@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-      {{title}}
+      {% if path == "home" %}{{title}}{% else %}Brian Moore - {{title}}{% endif %}
     </title>
     {% if description %}
       <meta name="description" content="{{description}}"/>
@@ -13,13 +13,17 @@
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="https://use.typekit.net/ewg6ljh.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   </head>
   <body>
 
     <header>
-      <h1>&nbsp;</h1>
+
+      <h1>{% if path == "home" %}&nbsp;{% else %}<a href="/">B</a>{% endif %}</h1>
       <ul class="menu">
-        <li><a href="/#work">Work</a></li>
+        <li><a href="#work">Work</a></li>
 <!--        <li><a href="#">Shop</a></li> -->
         <li><a href="/#about">About</a></li>
         <li><a href="/#contact">Contact</a></li>

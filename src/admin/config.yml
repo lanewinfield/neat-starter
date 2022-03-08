@@ -21,9 +21,9 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subhead", name: "subhead", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Thumbnail", name: "thumbnail", widget: "image" }
-      - { label: "Main", name: "main", widget: "code", default_language: "html" }
+      - { label: "Main", name: "main", widget: "code", default_language: "html", output_code_only: true, required: false }
       - label: "Links"
         name: "links"
         widget: "list"
@@ -36,8 +36,14 @@ collections:
     editor:
       preview: false
     files:
+      - label: "About"
+        name: "about"
+        file: "src/_data/about.yaml"
+        fields:
+          - { label: Photo, name: photo, widget: "image" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - label: "Contact"
-        name: "contact"
+        name: links
         file: "src/_data/contact.yaml"
         fields:
           - label: Contact Links
@@ -47,27 +53,55 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - { label: URL, name: url, widget: string }
+      - label: "Quotes"
+        name: "quotes"
+        file: "src/_data/quotes.yaml"
+        fields:
+          - label: "Quote"
+            name: quote
+            widget: list
+            collapsed: false
+            fields:
+              - { label: Quote, name: quote, widget: string }
+              - { label: Author, name: author, widget: string }
+              - { label: URL, name: url, widget: string, required: false}
       - label: "Press"
         name: "press"
         file: "src/_data/press.yaml"
         fields:
-          - { label: Publication, name: publication, widget: string }
-          - { label: Subhead, name: subhead, widget: string }
-          - { label: URL, name: url, widget: string }
+          - label: "Entry"
+            name: entry
+            widget: list
+            collapsed: false
+            fields:
+              - { label: Publication, name: publication, widget: string }
+              - { label: Subhead, name: subhead, widget: string }
+              - { label: URL, name: url, widget: string }
       - label: "Awards"
         name: "awards"
         file: "src/_data/awards.yaml"
         fields:
-          - { label: Award, name: award, widget: string }
-          - { label: Subhead, name: subhead, widget: string }
-          - { label: URL, name: url, widget: string, required: false}
+          - label: "Award"
+            name: award
+            widget: list
+            collapsed: false
+            fields:
+              - { label: Award, name: award, widget: string }
+              - { label: Subhead, name: subhead, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
       - label: "Speaking"
         name: "speaking"
         file: "src/_data/speaking.yaml"
         fields:
-          - { label: Event, name: event, widget: string }
-          - { label: Subhead, name: subhead, widget: string }
-          - { label: URL, name: url, widget: string, required: false}
+            - label: Event
+              name: event
+              widget: list
+              collapsed: false
+              fields:
+                - { label: Event, name: event, widget: string }
+                - { label: Year, name: year, widget: string }
+                - { label: Subhead, name: subhead, widget: string }
+                - { label: URL, name: url, widget: string, required: false}
       - label: "Meta Settings"
         name: "settings"
         file: "src/_data/settings.yaml"

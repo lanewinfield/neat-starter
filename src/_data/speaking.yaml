@@ -1,0 +1,13 @@
+event:
+  - event: TEDx
+    year: "2021"
+    subhead: a chat about creativity during the pandemic
+  - event: Whaaat?!
+    year: "2021"
+    subhead: slots and how to make weird stuff
+  - event: Hackaday
+    year: "2017"
+    subhead: a bit about Twitter bots
+  - event: Babycastles
+    year: "2017"
+    subhead: a talk on video bots

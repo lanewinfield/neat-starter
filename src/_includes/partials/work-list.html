@@ -1,6 +1,8 @@
     {% for work in collections.work %}
         <div class="work-entry">
-            <div class="entry-image"></div>
-            <h4>{{ work.data.title }}</h4>&nbsp;{{ work.data.subhead }}
+            <a href="{{ work.url }}">
+            <div class="entry-image" style="background-image: url({{work.data.thumbnail}})"></div>
+            <h4><u>{{ work.data.title }}</u>&nbsp;{{ work.data.subhead }}</h4>
+            </a>
         </div>
     {% endfor %}

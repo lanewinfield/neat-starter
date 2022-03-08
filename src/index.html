@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Brian Moore
+title: Brian Moore, creator
 path: home
 ---
 
-<h2 class="letter"><a href="#">B</a></h2>
+<h2 class="letter"><a href="/">B</a></h2>
       
 <section class="intro">
   <h2><span class="name-hidden">B</span><span class="name">rian Moore</span> plays with technology to create art and products that comment on popular culture, society, and technology itself.</h2>
@@ -16,3 +16,66 @@ path: home
   {% include "./_includes/partials/work-list.html" %}
 
 </section>
+
+<h3>About</h3>
+
+<section class="about" id="about">
+  <img src="{{ about.photo }}">
+  {{ about.body | md | safe }}
+</section>
+
+<h3>Quotes</h3>
+
+<section class="quotes">
+
+  {% for quote in quotes.quote %}
+  <p>&#8220;{{ quote.quote }}&#8221;</p>
+  <p class="quoteby">{{ quote.author }}</p>
+  {% endfor %}
+
+</section>
+
+<div class="contact-section">
+
+
+  <section class="contact" id="contact">
+    <h3>Contact</h3>
+    <ul>
+      {% for links in contact.links %}
+      <li><a href="{{ links.url }}">{{ links.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+
+  <section class="speaking">
+    <h3>Speaking</h3>
+    <ul>
+      {% for event in speaking.event %}
+      <li><strong>{{ event.event }}</strong>&nbsp;({{event.year}})&nbsp;{{event.subhead}}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+
+  <section class="press">
+    <h3>Selected Press</h3>
+    <ul>
+      {% for entry in press.entry %}
+      <li><a href="{{ entry.url }}">{{ entry.publication }}</a>&nbsp;{{entry.subhead}}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+
+  <section class="awards">
+    <h3>Awards</h3>
+    <ul>
+      {% for award in awards.award %}
+      <li><strong>{{ award.award }}</strong>&nbsp;{{ award.subhead }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+</div>
+

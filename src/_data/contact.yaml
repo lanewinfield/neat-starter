@@ -1,10 +1,9 @@
----
-contact:
+links:
   - title: TikTok
-    url: "https://tiktok.com/@lanewinfield"
+    url: https://tiktok.com/@lanewinfield
   - title: Instagram
-    url: "https://instagram.com/lanewinfield"
+    url: https://instagram.com/lanewinfield
   - title: Twitter
-    url: "https://twitter.com/lanewinfield"
+    url: https://twitter.com/lanewinfield
   - title: Email
-    url: "mailto:hi@brianmoore.com"
+    url: mailto:hi@brianmoore.com

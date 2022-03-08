@@ -1,0 +1,7 @@
+{
+    "layout": "work",
+    "permalink": "{{ title | slug }}/",
+    "tags": [
+        "work"
+    ]
+}
