@@ -83,7 +83,7 @@ h2, h1{
 }
 
 h2.letter {
-  display: inline-block;
+  display: block;
   position: sticky;
   position: -webkit-sticky;
   position: -moz-sticky;
@@ -91,7 +91,7 @@ h2.letter {
   position: -o-sticky;
   z-index: 666;
   top: 15px;
-  margin-top: 18vh;
+  margin-top: 7em;
   user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
