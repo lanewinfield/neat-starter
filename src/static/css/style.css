@@ -85,6 +85,10 @@ h2, h1{
 h2.letter {
   display: inline-block;
   position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   z-index: 666;
   top: 15px;
   margin-top: 18vh;
@@ -143,6 +147,7 @@ h3, .quoteby {
 }
 
 header, .main {
+  display: block;
   max-width: 1300px;
 }
 
