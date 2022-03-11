@@ -318,7 +318,11 @@ section.selected-work {
   }
 
   section {
-    padding-bottom: 250px;
+    padding-bottom: 200px;
+  }
+
+  h2.letter {
+    margin-top: 7em;
   }
 
   header ul.menu li {
