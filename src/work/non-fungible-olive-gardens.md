@@ -21,4 +21,7 @@ main: >-
   <div class="one-half">
     Ultimately the project ended up with a DMCA takedown from Darden Enterprises and subsequent delisting from OpenSea. But the memories and the unlimited breadsticks remain.
   </div>
+links:
+  - url: https://nfog.xyz
+    buttontext: Visit
 ---
