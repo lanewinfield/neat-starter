@@ -1,4 +1,4 @@
-    {% for work in collections.work %}
+    {% for work in collections.work | reverse %}
         <div class="work-entry">
             <a href="{{ work.url }}">
             <div class="entry-image" style="background-image: url({{work.data.thumbnail}})"></div>

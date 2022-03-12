@@ -2,6 +2,7 @@
 title: Shoom
 subhead: shows off your sneakers while WFH
 thumbnail: /static/img/shoom.jpg
+date: 2022-03-07T02:53:31.377Z
 main: >-
   <div class="one-half"><div style="max-width: 56vh;"><div style="left: 0;
   width: 100%; height: 0; position: relative; padding-bottom: 177.7778%;

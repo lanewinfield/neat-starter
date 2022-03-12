@@ -3,6 +3,7 @@ title: Blockedchain
 subhead: is an NFT that can only be minted by people blocked on Twitter
 description: wetaewtertretaetaer
 thumbnail: /static/img/blockedchain-1.jpg
+date: 2022-03-12T02:52:18.177Z
 main: >-
   <div class="full">"For discerning trolls, getting blocked on Twitter is a
   badge of honor. But the only way to brag about it is by posting a screenshot.

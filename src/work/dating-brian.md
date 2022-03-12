@@ -2,6 +2,7 @@
 title: Dating Brian
 subhead: was a courtship experiment
 thumbnail: /static/img/briandating.jpg
+date: 2022-03-02T02:54:15.509Z
 main: >-
   <div class="full">
     Newly single and new to NYC, I let the internet decide where, when, and who I date for an entire month.<br><br>

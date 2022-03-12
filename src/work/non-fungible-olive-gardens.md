@@ -2,6 +2,7 @@
 title: Non-Fungible Olive Gardens
 subhead: is the future of fast casual dining tokenization
 thumbnail: /static/img/38qn4kb012cbz3_8pqyl3p6p-gywf5kvqrwpkgy4akk.webp
+date: 2022-03-09T02:53:12.663Z
 main: >-
   <div class="full">For too long, ownership of Olive Garden franchises has been
   dominated by the capricious whims of the fiat system. That’s why we’re

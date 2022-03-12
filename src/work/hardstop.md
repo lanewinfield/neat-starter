@@ -3,6 +3,7 @@ title: Hardstop
 subhead: immediately ejects you from awkward Zoom goodbyes
 description: ""
 thumbnail: /static/img/pull-chain-800.webp
+date: 2022-03-10T02:52:58.612Z
 main: >-
   <div class="full">
     The most painful part of any video call (besides the call itself) is the awkward scramble to get to the "End Call" button after you've said goodbye. This bluetooth-connected pull switch, that hints at a toilet flusher, triggers software that immediately ejects you from any and all video calls.<br><br>

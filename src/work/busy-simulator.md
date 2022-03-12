@@ -2,6 +2,7 @@
 title: Busy Simulator
 subhead: makes you sound incredibly busy
 thumbnail: /static/img/screen-shot-2022-03-07-at-10.41.12-pm.png
+date: 2022-03-08T02:53:21.010Z
 main: >-
   <div class="one-half"><div style="max-width: 56vh;"><div style="left: 0;
   width: 100%; height: 0; position: relative; padding-bottom: 177.7778%;
