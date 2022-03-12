@@ -15,7 +15,6 @@ main: >-
 
   <div class="one-half">
     <img src="/static/img/coiners.png">
-    <img src="/static/img/coiners.png">
   </div>
 
 
