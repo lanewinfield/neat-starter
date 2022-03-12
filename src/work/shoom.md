@@ -11,7 +11,7 @@ main: >-
   scrolling="no" allow="encrypted-media;"></iframe></div></div></div>
 
 
-  <div class="one-half">One part Zoom, one part shoe.</div>
+  <div class="one-half">Sneaker sales have been impacted heavily from COVID, and it's easy to see why. If you're spending your entire day only showing the top half of your body, how are you going to flex your new kicks? Enter Shoom: a webcam for your sneakers that, with a click of its integrated foot pedal, reveal your shoes to your video chat. Brilliantly illuminated with a ring light, doesn't matter how dark your Zoom dungeon is, Shoom will make them look sharp as hell.</div>
 links:
   - url: https://www.tiktok.com/@lanewinfield/video/6991845923445837061
     buttontext: Video
