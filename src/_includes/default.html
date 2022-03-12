@@ -10,7 +10,7 @@
     {% if path == "home" %}
     <meta name="description" content="{{ settings.sitedescription }}"/>
     {% else %}
-    <meta name="description" content="{{ title }} {{ subhead }}"/>
+    <meta name="description" content="{{ title }} {{ subhead }}."/>
     {% endif %}
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="https://use.typekit.net/ewg6ljh.css">
@@ -20,6 +20,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     {% if path == "home" %}<meta property="og:image" content="{{ settings.baseurl }}{{ settings.shareimage }}" />{% endif %}    
     {% if path != "home" %}<meta property="og:image" content="{{ settings.baseurl }}{{ thumbnail }}" />{% endif %}
+    <meta property="og:description" content="{% if path == "home" %}{{ settings.sitedescription }}{% else %}{{ title }} {{ subhead }}.{% endif %}" />
   </head>
   <body>
 
