@@ -48,6 +48,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
   eleventyConfig.addPassthroughCopy("./src/favicon-16x16.png");
   eleventyConfig.addPassthroughCopy("./src/favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy({
+    "./src/subdirs": "./"
+  });
 
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {

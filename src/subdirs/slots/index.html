@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <title>Slots Machine</title>
+
+
+<!--   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print"> -->
+  <style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+  body {
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .crystal {
+    z-index: 666;
+    
+  }
+  .crystal img:active {
+    transform: scale(1) !important;
+  }
+  .crystal img:hover {
+    transform: scale(1.05);
+  }
+  .crystal img {
+    width: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 666;
+    transition: transform 0.2s ease;
+  }
+
+  .sides {}
+
+  .sides .choice {
+    position: relative;
+    margin-top: 47vh; 
+    display: inline-block;
+    color: #f3b7f4;
+
+  }
+
+  .black {
+    color: black !important;
+    -webkit-transition: color 2s ease-out 0.7s;
+    -moz-transition: color 2s ease-out 0.7s;
+    -o-transition: color 2s ease-out 0.7s;
+    transition: color 2s ease-out 0.7s;
+  }
+
+  .left .choice {
+    right: -50vw;
+    z-index: 1;
+  }
+
+  .left{
+    text-align: right;
+  }
+
+  .right {
+    text-align: left;
+  }
+
+  .right .choice {
+    left: -50vw;
+  }
+
+  .left, .right {
+    overflow: hidden;
+    width: 50vw;
+    float: left;
+    padding-bottom: 5vh;
+    /*text-align: center;*/
+  }
+  </style>
+
+</head>
+
+<body>
+  <div class="crystal">
+    <img src="crystalball.png" />
+  </div>
+  <div class="sides">
+    <div class="left">
+      <div class="choice">testing one</div>
+    </div>
+    <div class="right">
+      <div class="choice">testing two</div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    var array = "twitter bots, snapchat lenses, album release, notification overload, twitch, tattoos, drones, domain names, amazon, tech billionaires, terrorism, memes, emoji, voice control, IoT, video games, board games, microcontrollers, wfh, sneaker culture, drop culture, drive thrus, bike lanes, whaaat!?, VR, AR, old technology, halloween costumes, banking, credit cards, recipes, cooking videos, speedrunning, anxiety, depression, adhd, bathrooms, mapping, current location, clothing, 3d printing, electric cars, eink, cell reception, phone battery, todo lists, recent photos, tagged photos, polls, jaywalking, shoplifting, weather, newsletters, IPOs, stock market, cashapp/venmo, snail mail, NFTs, texting, dating apps, dating, video calls, image recognition, face recognition, machine learning, crypto, slack, porn, onlyfans, sex toys, swords, mystery boxes, food delivery, text to speech, olive garden, global warming, phone calls, airplanes, rideshares, vaccines, cosplay, IBS, tiktok".split(', ');
+    var array_old = "album release, notification overload, tattoos, terrorism, memes, emoji, voice control, video games, board games, wfh, sneaker culture, drive thrus, bike lanes, old technology, halloween costumes, banking, credit cards, recipes, cooking videos, anxiety, depression, adhd, bathrooms, clothing, cell reception, phone battery, todo lists, recent photos, tagged photos, polls, jaywalking, shoplifting, weather, stock market, snail mail, texting, dating, video calls, porn, sex toys, swords, mystery boxes, food delivery, olive garden, global warming, phone calls, airplanes, rideshares, IBS, tiktok".split(', ');
+    var array_new = array.filter(function(val) {
+      return array_old.indexOf(val) == -1;
+    });
+    $(".crystal").click(function(){
+      console.log("oh hi");
+      shuffled = array.sort(() => 0.5 - Math.random());
+      shuffled_old = array_old.sort(() => 0.5 - Math.random());
+      shuffled_new = array_new.sort(() => 0.5 - Math.random());
+            $(".left .choice").stop(true,true).removeClass("black").text(shuffled[0]).css("right",-100).animate({
+          right: 150,
+          opacity: 1
+      }, 1000);
+      $(".right .choice").stop(true,true).removeClass("black").text(shuffled[1]).css("left",-100).animate({
+          left: 150,
+          opacity: 1
+      }, 1000);
+      $(".right .choice, .left .choice").delay(1).addClass("black");
+    });
+  </script>
+</body>
+</html>
