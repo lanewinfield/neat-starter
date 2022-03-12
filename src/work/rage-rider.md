@@ -3,7 +3,8 @@ title: Rage Rider
 subhead: is a scream-powered scooter
 thumbnail: /static/img/rage-rider_poster.jpg
 main: >-
-  A real, working scooter that is powered by your screams.
+  A real, working scooter that is powered by your screams. Created in
+  collaboration with Angry Birds.
 
   <br><br>
 
