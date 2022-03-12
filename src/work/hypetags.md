@@ -12,7 +12,7 @@ main: >-
   width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen
   scrolling="no" allow="encrypted-media;"></iframe></div></div></div>
 
-  <div class="one-half">Hypetags is a late capitalistic study on sneakerhead culture. Or it's a troll for streetwear. Or it's a genuine product. <br><br>Whatever it is, it grabs the live price of the sneaker you're currently wearing and updates it in real time directly between your laces. <br><br>4 of 5 thieves approved.</div>
+  <div class="one-half">Hypetags is a late capitalistic study on sneakerhead culture. Or it's a troll for streetwear. Or it's a genuine product. <br><br>Whatever it is, it grabs the live price of the sneaker you're currently wearing and updates it in real time directly between your laces. <br><br>4 of 5 thieves approved.<br><br>In collaboration with <a href="https://ilovechrisbaker.com">Chris Baker</a>, <a href="http://www.junebang.com/">June Bang</a>, and <a href="https://www.notthatrock.com/">Lindsey Rock</a>.</div>
 links:
   - url: https://www.tiktok.com/@lanewinfield/video/7038960477262761262
     buttontext: Video
