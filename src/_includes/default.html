@@ -20,6 +20,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     {% if path == "home" %}<meta property="og:image" content="{{ settings.baseurl }}{{ settings.shareimage }}" />{% endif %}    
     {% if path != "home" %}<meta property="og:image" content="{{ settings.baseurl }}{{ thumbnail }}" />{% endif %}
+    <meta property="og:title" content="{% if path == "home" %}{{title}}{% else %}{{title}} &mdash; Brian Moore{% endif %}" />
     <meta property="og:description" content="{% if path == "home" %}{{ settings.sitedescription }}{% else %}{{ title }} {{ subhead }}.{% endif %}" />
   </head>
   <body>
