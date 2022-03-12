@@ -30,7 +30,7 @@
         <li><a href="#work">Work</a></li>
 <!--        <li><a href="#">Shop</a></li> -->
         <li><a href="/#about">About</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </header>
 
@@ -40,7 +40,10 @@
     {{ content | safe }}
 
     <footer>
-      <h3>THE END © BRIAN MOORE 2022</h3>
+      <h3>THE END © BRIAN MOORE&nbsp;<script language="javascript" type="text/javascript">
+          var today = new Date();
+          var year = today.getFullYear();
+          document.write(year);</script></h3>
     </footer>
 
     {% if path == "home" %}

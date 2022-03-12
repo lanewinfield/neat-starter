@@ -379,7 +379,11 @@ section.selected-work {
   .contact-section {
     flex-flow: column wrap;
     align-content: space-between;
-    height: 40em;
+    height: 42em;
+  }
+
+  .contact-section.work-contact{
+    height: 15em;
   }
 
   .current-work h2 {
@@ -453,5 +457,11 @@ section.selected-work {
 @media only screen and (min-width: 1250px) {
   body {
     font-size: 2.75em;
+  }
+  .contact-section {
+    height: 35em;
+  }
+  .contact-section.work-contact{
+    height: 15em;
   }
 }

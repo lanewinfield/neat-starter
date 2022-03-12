@@ -2,7 +2,7 @@
         <div class="work-entry">
             <a href="{{ work.url }}">
             <div class="entry-image" style="background-image: url({{work.data.thumbnail}})"></div>
-            <h4><u>{{ work.data.title }}</u>&nbsp;{{ work.data.subhead }}</h4>
+            <h4><u>{{ work.data.title }}</u> {{ work.data.subhead }}</h4>
             </a>
         </div>
     {% endfor %}
