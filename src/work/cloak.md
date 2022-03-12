@@ -5,6 +5,7 @@ thumbnail: /static/img/cloak.jpg
 main: >+
   <div class="full">
     Created in 2014, Cloak is an anti-social networking app that helps you avoid people you don't want to see. It pulls in location data from popular social networks—Instagram, Facebook, Twitter, and Foursquare—and warns you when you get too close to people you don't want to run into.<br><br>
+    It's like incognito mode for real life.<br><br>
   </div>
 
 
