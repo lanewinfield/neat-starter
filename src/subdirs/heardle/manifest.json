@@ -1,0 +1,21 @@
+{
+  "short_name": "Heardle",
+  "name": "Heardle",
+  "icons": [
+    {
+      "src": "/heardle/images/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/heardle/images/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://brianmoore.com/heardle/",
+  "background_color": "#6aaa64",
+  "display": "standalone",
+  "theme_color": "#6aaa64",
+  "description": "A daily spoken word game"
+}

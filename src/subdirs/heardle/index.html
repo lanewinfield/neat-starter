@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <title>Heardle - A daily spoken word game</title>
+    <meta name="description" content="Guess the hidden word in 6 tries using your voice. A new puzzle is available each day.">
+
+    <!-- FB Meta Tags -->
+    <meta property="og:url" content="https://brianmoore.com/heardle/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Heardle - A daily spoken word game">
+    <meta property="og:description" content="Guess the hidden word in 6 tries using your voice. A new puzzle is available each day.">
+    <meta property="og:image" content="https://brianmoore.com/heardle/images/heardle-share.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="brianmoore.com">
+
+    <meta name="theme-color" content="#6aaa64" />
+    <link rel="manifest" href="manifest.json" />
+    <link href="images/icon-192x192.png" rel="icon shortcut" sizes="3232" />
+    <link href="images/icon-192x192.png" rel="apple-touch-icon" />
+
+    <style>
+      /* Global Styles & Colors */
+      :root {
+        --green: #6aaa64;
+        --darkendGreen: #538d4e;
+        --yellow: #c9b458;
+        --darkendYellow: #b59f3b;
+        --lightGray: #d8d8d8;
+        --gray: #86888a;
+        --darkGray: #939598;
+        --white: #fff;
+        --black: #212121;
+        /* Colorblind colors */
+        --orange: #f5793a;
+        --blue: #85c0f9;
+        font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 16px;
+        --header-height: 50px;
+        --keyboard-height: 200px;
+        --game-max-width: 500px;
+      }
+      /* Light theme colors */
+      :root {
+        --color-tone-1: #1a1a1b;
+        --color-tone-2: #787c7e;
+        --color-tone-3: #878a8c;
+        --color-tone-4: #d3d6da;
+        --color-tone-5: #edeff1;
+        --color-tone-6: #f6f7f8;
+        --color-tone-7: #ffffff;
+        --opacity-50: rgba(255, 255, 255, 0.5);
+      }
+      /* Dark Theme Colors */
+      .nightmode {
+        --color-tone-1: #d7dadc;
+        --color-tone-2: #818384;
+        --color-tone-3: #565758;
+        --color-tone-4: #3a3a3c;
+        --color-tone-5: #272729;
+        --color-tone-6: #1a1a1b;
+        --color-tone-7: #121213;
+        --opacity-50: rgba(0, 0, 0, 0.5);
+      }
+      /* Constant colors and colors derived from theme */
+      :root,
+      .nightmode {
+        --color-background: var(--color-tone-7);
+      }
+      :root {
+        --color-present: var(--yellow);
+        --color-correct: var(--green);
+        --color-absent: var(--color-tone-2);
+        --tile-text-color: var(--color-tone-7);
+        --key-text-color: var(--color-tone-1);
+        --key-evaluated-text-color: var(--color-tone-7);
+        --key-bg: var(--color-tone-4);
+        --key-bg-present: var(--color-present);
+        --key-bg-correct: var(--color-correct);
+        --key-bg-absent: var(--color-absent);
+        --modal-content-bg: var(--color-tone-7);
+      }
+      .nightmode {
+        --color-present: var(--darkendYellow);
+        --color-correct: var(--darkendGreen);
+        --color-absent: var(--color-tone-4);
+        --tile-text-color: var(--color-tone-1);
+        --key-text-color: var(--color-tone-1);
+        --key-evaluated-text-color: var(--color-tone-1);
+        --key-bg: var(--color-tone-2);
+        --key-bg-present: var(--color-present);
+        --key-bg-correct: var(--color-correct);
+        --key-bg-absent: var(--color-absent);
+        --modal-content-bg: var(--color-tone-7);
+      }
+      .colorblind {
+        --color-correct: var(--orange);
+        --color-present: var(--blue);
+        --tile-text-color: var(--white);
+        --key-bg-present: var(--color-present);
+        --key-bg-correct: var(--color-correct);
+        --key-bg-absent: var(--color-absent);
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        background-color: var(--color-background);
+        margin: 0;
+        padding: 0;
+        /* Prevent scrollbar appearing on page transition */
+        overflow-y: hidden;
+      }
+      #voice {
+        position: absolute;
+        bottom: 10px;
+        text-align: center;
+        padding: 20px 30px;
+        background-color:  #F44336;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-radius: 100px;
+      }
+
+      .listening {
+        animation-name: color;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+
+      #voice:hover {
+        cursor: pointer;
+      }
+
+      @keyframes color {
+        0% {
+          background-color: #F44336;
+        }
+        50% {
+          background-color: #B71C1C;
+        }
+        100 {
+          background-color: #F44336;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="voice" onclick="startRecog()">Click to speak</div>
+    <script src="main.e65ce0a5.js"></script>
+
+    <script>
+
+      let voiceButton = document.getElementById('voice');
+      let final_transcript = '';
+      let isRecognizing = false;
+      let currentWord = '';
+
+
+      function startRecog() {
+         final_transcript = '';
+         // recognition.lang = select_dialect.value;
+         if(!isRecognizing){
+          recognition.start();
+        } else {
+          recognition.stop();
+        }
+      }
+
+      if (!('webkitSpeechRecognition' in window)) {
+        upgrade();
+        console.log("NOPE");
+      } else {
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = true;
+
+        recognition.onstart = function() { 
+          voiceButton.classList.add("listening");
+          voiceButton.innerHTML = "Listening...";
+          isRecognizing = true;
+          currentWord = '';
+        }
+
+          recognition.onresult = function(event) {
+            var interim_transcript = '';
+
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+              // console.log("first word: "+ event.results[0][0].transcript);
+              if (event.results[i].isFinal) { 
+                final_transcript += event.results[i][0].transcript;
+                // console.log("final: " + final_transcript);
+                first_word = event.results[i][0].transcript.replace(/\s/g, '');
+                final_transcript = first_word.toLowerCase();
+                // console.log(final_transcript);
+                
+                game = document.body.getElementsByTagName("game-app")[0];
+                // final_transcript = capitalize(final_transcript);
+                // final_span.innerHTML = linebreak(final_transcript);
+                // interim_span.innerHTML = linebreak(interim_transcript);
+                game.removeLetter();
+                game.removeLetter();
+                game.removeLetter();
+                game.removeLetter();
+                game.removeLetter();
+                if(final_transcript.length > 5){
+                  game.addToast("Word too long");
+                } else {
+                  for (var i = 0; i < final_transcript.length; i++) {
+                    // var p = i;
+                    var thisLetter = final_transcript.charAt(i);
+                    window.setTimeout(function(thisLetter){
+                      game.addLetter(thisLetter);
+                      // console.log(thisLetter);
+                    }, i *0, thisLetter);
+                  }
+                  // game.addLetter(final_transcript);
+                  // game.tileIndex = 5;
+                  window.setTimeout(function(){
+                    game.submitGuess();
+                  },(final_transcript.length)*0);
+                }
+              } else {
+                interim_transcript += event.results[i][0].transcript.replace(/\s/g, '');
+                if(interim_transcript.length < 6){
+                  if(interim_transcript != currentWord) {
+                    currentWord = interim_transcript;
+                    game.removeLetter();
+                    game.removeLetter();
+                    game.removeLetter();
+                    game.removeLetter();
+                    game.removeLetter();
+                    for (var i = 0; i < interim_transcript.length; i++) {
+                      // var p = i;
+                      var thisLetter = interim_transcript.charAt(i);
+                      window.setTimeout(function(thisLetter){
+                        game.addLetter(thisLetter);
+                        // console.log(thisLetter);
+                      }, i *0, thisLetter);
+                    }
+                  }
+                } else {
+                  game.removeLetter();
+                  game.removeLetter();
+                  game.removeLetter();
+                  game.removeLetter();
+                  game.removeLetter();
+                }
+
+              }
+            }
+            
+          }
+        recognition.onerror = function(event) { 
+          game.addToast(event.error);
+          isRecognizing = false;
+        }
+        recognition.onend = function() {
+          voiceButton.classList.remove("listening");
+          voiceButton.innerHTML = "Click to speak";
+          isRecognizing = false;
+        }
+        recognition.onspeechstart = function() {
+          // console.log('Speech has been detected');
+          window.setTimeout(function(){
+            recognition.stop();
+          }, 2300);
+        }
+      }
+
+      let game;
+
+      document.addEventListener("DOMContentLoaded", function(){
+         // your page initialization code here
+         // the DOM will be available here
+         game = document.body.getElementsByTagName("game-app")[0];
+
+
+
+      });
+      // Get the page's game object (#1)
+
+      // Check if the game is finished
+      // if(game.gameStatus != "IN_PROGRESS") {
+      //   window.alert("Game is already finished.");
+      //   return;
+      // }
+
+      // Input the game's solution into the board (#2 and #3)
+      // game.addLetter("penis");
+
+      // Tell the game you actually inputted 5 letters (#4)
+      // game.tileIndex = 5;
+
+      // Submit the inputted guess (#5)
+      // game.submitGuess();
+    </script>
+
+    <game-app></game-app>
+  </body>
+</html>
