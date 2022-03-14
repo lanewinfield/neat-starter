@@ -2,7 +2,7 @@
 title: RP-FX
 subhead: is an AR sequencer built into Reese's Puffs boxes
 thumbnail: /static/img/02_hero_b.jpg
-date: 2022-03-09T07:46:10.994Z
+date: 2022-03-07T07:46:10.994Z
 main: >-
   <div class="full">How do you make a physical sequencer on the back of a cereal
   box? By using the cereal itself as the controller. An AR webapp tracks
