@@ -19,6 +19,7 @@ main: >-
 
 
   <div class="one-half">
+    All 880 tokens sold out within 12 hours after release.<br><br>
     Ultimately the project ended up with a DMCA takedown from Darden Enterprises and subsequent delisting from OpenSea. But the memories and the unlimited breadsticks remain.
   </div>
 links:
