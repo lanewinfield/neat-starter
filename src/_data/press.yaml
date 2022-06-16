@@ -1,4 +1,7 @@
 entry:
+  - publication: TechCrunch
+    url: https://techcrunch.com/2022/05/18/usdtea-more-stable-than-bitcoin-crypto-stablecoin-arizona-iced-tea/
+    subhead: on USDTea
   - publication: Input Mag
     subhead: on Blockedchain
     url: https://www.inputmag.com/culture/blockedchain-is-nft-you-can-mint-if-elon-musk-has-blocked-you
@@ -18,7 +21,7 @@ entry:
     subhead: on Rage Rider
     url: https://twitter.com/IGN/status/1194253852490502145
   - publication: The New York Times
-    subhead:  has Voter Suppression Trail
+    subhead: has Voter Suppression Trail
     url: https://www.nytimes.com/interactive/2016/11/01/opinion/voting-suppression-videogame.html?_r=1
   - publication: VICE
     subhead: on GOP Arcade
