@@ -1,6 +1,6 @@
 ---
 title: USDTea
-subhead: is the first stablecoin backed by AriZona Iced Tea
+subhead: is the first stablecoin backed by cans of AriZona Iced Tea
 thumbnail: /static/img/usdtea.png
 date: 2022-06-16T05:33:59.564Z
 main: >-
