@@ -1,6 +1,6 @@
 ---
 title: Cloak
-subhead: helps you avoid your "friends"
+subhead: is an antisocial networking app
 thumbnail: /static/img/cloak.jpg
 date: 2022-03-04T02:54:02.792Z
 main: >+
