@@ -17,4 +17,6 @@ main: >-
 links:
   - url: https://usdtea.io
     buttontext: Invest
+  - url: https://techcrunch.com/2022/05/18/usdtea-more-stable-than-bitcoin-crypto-stablecoin-arizona-iced-tea/
+    buttontext: TechCrunch
 ---
