@@ -10,7 +10,7 @@ main: >-
   30 years: <a href="https://drinkarizona.com/">AriZona Iced Tea</a>. While
   other stablecoins attempt to peg to dollar amounts through questionable
   algorithms or opaque investment strategies, we guarantee our liquidity with
-  sweet, delicious liquid.</div>
+  sweet, delicious liquid.<br><br></div>
 
 
   <div class="full"><img src="/static/img/usdtea-charts.png"></div>
